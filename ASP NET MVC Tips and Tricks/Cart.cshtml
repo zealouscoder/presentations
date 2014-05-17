@@ -1,0 +1,14 @@
+﻿@model App.Models.Cart
+@section Stylesheets
+{
+	@Styles.Render("~/Content/cartstyles")
+}
+@section Scripts
+{
+	@Scripts.Render("~/JS/cartscripts")
+}
+<h1>Your Cart</h1>
+<table>
+	@Html.Partial("CartItemList", Model.Items)
+	@Html.Partial("CartItemSummary", Model)
+</table>

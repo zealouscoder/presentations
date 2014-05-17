@@ -1,0 +1,19 @@
+﻿@using App.Models
+@model List<CartItem>
+@if (Model.Count == 0)
+{
+	<tr>
+		<td>
+			You have 0 items in your cart.
+		</td>
+	</tr>
+}
+@foreach (CartItem item in Model)
+{
+	<tr>
+		<td>@Html.RouteLink(item.ProductName, "ProductDetail", new { productId = item.ProductId }) </td>
+		<td>@item.Count</td>
+		<td>@item.DisplayProductPrice</td>
+		<td>@item.DisplayTotalPrice</td>
+	</tr>
+}
